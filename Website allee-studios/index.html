@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allee Studios – Produktionen für die Freiheit</title>
+  <meta name="description" content="Allee Studios – Produktionen für die Freiheit. Kreativer Raum für Musik, Film, Kunst und Veranstaltungen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0d0d0d;
+      --dark:    #161616;
+      --mid:     #1e1e1e;
+      --border:  #2a2a2a;
+      --muted:   #666;
+      --light:   #a8a8a8;
+      --white:   #f0ede8;
+      --accent:  #c8a96e;   /* warmes Gold – wird nach Logo-Upload angepasst */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(13,13,13,0.95) 0%, transparent 100%);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 42px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 2.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(200,169,110,0.08) 0%, transparent 60%),
+        linear-gradient(180deg, var(--black) 0%, var(--dark) 100%);
+    }
+
+    .hero-line {
+      position: absolute;
+      bottom: 0; left: 2.5rem;
+      width: 1px;
+      height: 120px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .hero-content { position: relative; max-width: 720px; }
+
+    .hero-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.1;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--light);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 2.5rem;
+    }
+
+    /* ── KONTAKT (Hauptbereich) ── */
+    #kontakt {
+      padding: 6rem 2.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    #kontakt h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+
+    #kontakt .intro {
+      color: var(--light);
+      font-size: 1rem;
+      max-width: 520px;
+      margin-bottom: 3.5rem;
+    }
+
+    .kontakt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .kontakt-grid { grid-template-columns: 1fr; }
+    }
+
+    .kontakt-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      transition: border-color 0.3s;
+    }
+
+    .kontakt-card:hover { border-color: var(--accent); }
+
+    .kontakt-card .card-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .kontakt-card a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.3s;
+    }
+
+    .kontakt-card a:hover { color: var(--accent); }
+
+    .kontakt-card p {
+      color: var(--light);
+      font-size: 0.88rem;
+      margin-top: 0.4rem;
+    }
+
+    /* Kontaktformular */
+    .kontakt-form {
+      margin-top: 3rem;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+
+    .kontakt-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+      margin-bottom: 1.75rem;
+      color: var(--white);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
+    .form-group label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--mid);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 0.75rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--accent); }
+
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .form-group select option { background: var(--mid); }
+
+    .btn-send {
+      background: var(--accent);
+      color: var(--black);
+      border: none;
+      padding: 0.9rem 2.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    .btn-send:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE NAV ── */
+    @media (max-width: 600px) {
+      header { padding: 1.25rem 1.25rem; }
+      .hero { padding: 0 1.25rem 4rem; }
+      #kontakt { padding: 4rem 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; }
+      .divider { margin: 0 1.25rem; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a class="logo" href="#">
+      <!-- Logo: nach Upload ersetzen -->
+      <span class="logo-text">Allee Studios</span>
+    </a>
+    <nav>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Hamburg · Studio & Location</span>
+      <h1>Produktionen<br>für die <em>Freiheit.</em></h1>
+      <p class="hero-sub">Raum für Musik, Film, Kunst und lebendige Veranstaltungen – im Herzen der Allee.</p>
+      <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <span class="section-label">Kontakt</span>
+    <h2>Lass uns reden.</h2>
+    <p class="intro">Fragen zu Buchungen, Kooperationen oder einfach Hallo – wir freuen uns auf deine Nachricht.</p>
+
+    <div class="kontakt-grid">
+      <div class="kontakt-card">
+        <span class="card-label">E-Mail</span>
+        <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
+        <p>Wir antworten innerhalb von 48 Stunden.</p>
+      </div>
+      <div class="kontakt-card">
+        <span class="card-label">Instagram</span>
+        <a href="https://instagram.com/alleestudios" target="_blank" rel="noopener">@alleestudios</a>
+        <p>Einblicke, Projekte & Termine.</p>
+      </div>
+    </div>
+
+    <!-- Kontaktformular -->
+    <div class="kontakt-form">
+      <h3>Schreib uns direkt.</h3>
+      <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="kontakt" />
+        <p style="display:none"><label>Nicht ausfüllen: <input name="bot-field" /></label></p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Dein Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.de" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="betreff">Betreff</label>
+          <select id="betreff" name="betreff">
+            <option value="">Bitte wählen …</option>
+            <option value="buchung">Raumbuchung / Location</option>
+            <option value="produktion">Produktion / Projekt</option>
+            <option value="kooperation">Kooperation</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="nachricht">Nachricht</label>
+          <textarea id="nachricht" name="nachricht" placeholder="Was hast du vor?" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-send">Nachricht senden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Allee Studios</p>
+    <div>
+      <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
+      &nbsp;·&nbsp;
+      <a href="#">Impressum</a>
+      &nbsp;·&nbsp;
+      <a href="#">Datenschutz</a>
+    </div>
+  </footer>
+
+</body>
+</html>
