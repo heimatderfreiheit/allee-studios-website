@@ -4,32 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Allee Studios – Produktionen für die Freiheit</title>
-  <meta name="description" content="Allee Studios – Produktionen für die Freiheit. Kreativer Raum für Musik, Film, Kunst und Veranstaltungen." />
+  <meta name="description" content="Allee Studios Berlin – Studio und Location für die Produktion von Videos, Podcasts und kleinen Events. Kollwitzkiez, Berlin." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:   #0d0d0d;
-      --dark:    #161616;
-      --mid:     #1e1e1e;
-      --border:  #2a2a2a;
-      --muted:   #666;
-      --light:   #a8a8a8;
-      --white:   #f0ede8;
-      --accent:  #c8a96e;   /* warmes Gold – wird nach Logo-Upload angepasst */
+      --green:   #0e1f18;
+      --dark:    #132a20;
+      --mid:     #1a3829;
+      --border:  #2a4a38;
+      --muted:   #4a6a58;
+      --light:   #7a9a88;
+      --cream:   #f0ede6;
+      --gold:    #c9a84c;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--black);
-      color: var(--white);
+      background: var(--green);
+      color: var(--cream);
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       line-height: 1.7;
-      min-height: 100vh;
     }
 
     /* ── HEADER ── */
@@ -37,279 +36,313 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 1.5rem 2.5rem;
+      padding: 1.25rem 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: linear-gradient(to bottom, rgba(13,13,13,0.95) 0%, transparent 100%);
+      background: linear-gradient(to bottom, rgba(14,31,24,0.92), transparent);
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-    }
-
-    .logo img {
-      height: 42px;
-      width: auto;
-    }
-
-    .logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.08em;
-      color: var(--white);
-    }
-
-    nav a {
-      color: var(--light);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
+    .header-wordmark {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
-      margin-left: 2rem;
+      color: var(--cream);
+      text-decoration: none;
+      opacity: 0.85;
+    }
+
+    nav { display: flex; gap: 2rem; }
+    nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.5);
+      text-decoration: none;
       transition: color 0.3s;
     }
-
-    nav a:hover { color: var(--accent); }
+    nav a:hover { color: var(--gold); }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 2.5rem 5rem;
       position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
       overflow: hidden;
     }
 
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(200,169,110,0.08) 0%, transparent 60%),
-        linear-gradient(180deg, var(--black) 0%, var(--dark) 100%);
+      background-image: url('assets/studio.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      background-attachment: fixed;
     }
 
-    .hero-line {
+    /* iOS: kein fixed background-attachment Support */
+    @supports (-webkit-touch-callout: none) {
+      .hero-bg { background-attachment: scroll; }
+    }
+
+    .hero-overlay {
       position: absolute;
-      bottom: 0; left: 2.5rem;
-      width: 1px;
-      height: 120px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
+      inset: 0;
+      background: linear-gradient(
+        175deg,
+        rgba(14,31,24,0.05) 0%,
+        rgba(14,31,24,0.3)  45%,
+        rgba(14,31,24,0.95) 100%
+      );
     }
 
-    .hero-content { position: relative; max-width: 720px; }
-
-    .hero-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      display: block;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 2.5rem 5rem;
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      line-height: 1.1;
+    .hero-headline {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 8.5vw, 9rem);
       font-weight: 400;
-      color: var(--white);
+      letter-spacing: 0.02em;
+      line-height: 0.95;
+      color: var(--cream);
       margin-bottom: 1.5rem;
     }
-
-    h1 em {
+    .hero-headline em {
       font-style: italic;
-      color: var(--accent);
+      color: var(--gold);
     }
 
-    .hero-sub {
-      font-size: 1rem;
-      color: var(--light);
-      max-width: 480px;
-      margin-bottom: 2.5rem;
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-descriptor {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.55);
     }
 
     .btn {
       display: inline-block;
-      padding: 0.85rem 2rem;
-      border: 1px solid var(--accent);
-      color: var(--accent);
+      padding: 0.85rem 2.2rem;
+      border: 1px solid rgba(201,168,76,0.6);
+      color: var(--gold);
       text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       transition: all 0.3s;
+      white-space: nowrap;
     }
-
     .btn:hover {
-      background: var(--accent);
-      color: var(--black);
+      background: var(--gold);
+      color: var(--green);
+      border-color: var(--gold);
     }
 
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 2.5rem;
+    /* ── HEIMAT VON ── */
+    #projekte {
+      background: var(--cream);
+      padding: 6rem 2.5rem 5rem;
     }
 
-    /* ── KONTAKT (Hauptbereich) ── */
-    #kontakt {
-      padding: 6rem 2.5rem;
+    #projekte .inner {
       max-width: 960px;
       margin: 0 auto;
     }
 
-    .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    #kontakt h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
+    .projekte-heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 400;
-      margin-bottom: 0.75rem;
-      color: var(--white);
-    }
-
-    #kontakt .intro {
-      color: var(--light);
-      font-size: 1rem;
-      max-width: 520px;
+      letter-spacing: 0.08em;
+      color: var(--green);
       margin-bottom: 3.5rem;
+      line-height: 1;
     }
 
-    .kontakt-grid {
+    .projekt-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(14,31,24,0.12);
+    }
+
+    .projekt {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      grid-template-columns: 220px 1fr;
+      gap: 3.5rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(14,31,24,0.12);
+      align-items: start;
     }
 
-    @media (max-width: 640px) {
-      .kontakt-grid { grid-template-columns: 1fr; }
-    }
-
-    .kontakt-card {
-      background: var(--dark);
-      border: 1px solid var(--border);
-      padding: 2rem;
-      transition: border-color 0.3s;
-    }
-
-    .kontakt-card:hover { border-color: var(--accent); }
-
-    .kontakt-card .card-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
+    .projekt-logo {
+      width: 200px;
+      height: 110px;
+      object-fit: contain;
+      object-position: left center;
       display: block;
     }
 
-    .kontakt-card a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 1.05rem;
-      transition: color 0.3s;
+    .projekt-text {
+      color: #3a5248;
+      font-size: 0.92rem;
+      line-height: 1.8;
+      padding-top: 0.25rem;
     }
 
-    .kontakt-card a:hover { color: var(--accent); }
+    /* ── KONTAKT ── */
+    #kontakt {
+      padding: 6rem 2.5rem 5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
 
-    .kontakt-card p {
+    .kontakt-heading {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .kontakt-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.75;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .kontakt-meta {
       color: var(--light);
       font-size: 0.88rem;
-      margin-top: 0.4rem;
+      max-width: 520px;
+      margin-bottom: 3rem;
+      line-height: 1.7;
     }
 
-    /* Kontaktformular */
-    .kontakt-form {
-      margin-top: 3rem;
-      background: var(--dark);
-      border: 1px solid var(--border);
-      padding: 2.5rem;
+    .kontakt-list {
+      border-top: 1px solid var(--border);
+      margin-bottom: 4rem;
     }
 
-    .kontakt-form h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 400;
-      font-size: 1.4rem;
-      margin-bottom: 1.75rem;
-      color: var(--white);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .kontakt-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
       gap: 1rem;
-      margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
 
-    @media (max-width: 640px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
-
-    .form-group { display: flex; flex-direction: column; margin-bottom: 1rem; }
-    .form-group label {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
+    .kontakt-item-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 0.4rem;
+      min-width: 80px;
     }
 
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      background: var(--mid);
-      border: 1px solid var(--border);
-      color: var(--white);
-      padding: 0.75rem 1rem;
+    .kontakt-item a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    .kontakt-item a:hover { color: var(--gold); }
+
+    .kontakt-item-note {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    /* Formular */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 2.5rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    .field label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.57rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      color: var(--cream);
+      padding: 0.5rem 0;
       font-family: 'Inter', sans-serif;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 300;
       outline: none;
       transition: border-color 0.3s;
+      -webkit-appearance: none;
+      border-radius: 0;
     }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-color: var(--accent); }
-
-    .form-group textarea { resize: vertical; min-height: 130px; }
-
-    .form-group select option { background: var(--mid); }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus { border-bottom-color: var(--gold); }
+    .field input::placeholder,
+    .field textarea::placeholder { color: var(--muted); font-size: 0.85rem; }
+    .field textarea { resize: none; min-height: 110px; padding-top: 0.4rem; }
+    .field select option { background: var(--dark); }
+    .full { grid-column: 1 / -1; }
 
     .btn-send {
-      background: var(--accent);
-      color: var(--black);
-      border: none;
-      padding: 0.9rem 2.5rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.8rem 2.2rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       cursor: pointer;
-      font-weight: 500;
-      transition: opacity 0.3s;
+      transition: all 0.3s;
     }
-
-    .btn-send:hover { opacity: 0.85; }
+    .btn-send:hover { background: var(--gold); color: var(--green); }
 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 2rem 2.5rem;
+      padding: 1.75rem 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -317,28 +350,62 @@
       gap: 1rem;
     }
 
-    footer p {
-      font-size: 0.78rem;
+    footer span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
       color: var(--muted);
     }
 
-    footer a {
-      font-size: 0.78rem;
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
       transition: color 0.3s;
     }
+    .footer-links a:hover { color: var(--gold); }
 
-    footer a:hover { color: var(--accent); }
+    /* ── MOBILE & TABLET ── */
+    @media (max-width: 900px) {
+      .projekt {
+        grid-template-columns: 180px 1fr;
+        gap: 2rem;
+      }
+      .projekt-logo { width: 160px; height: 90px; }
+    }
 
-    /* ── RESPONSIVE NAV ── */
-    @media (max-width: 600px) {
-      header { padding: 1.25rem 1.25rem; }
-      .hero { padding: 0 1.25rem 4rem; }
-      #kontakt { padding: 4rem 1.25rem; }
+    @media (max-width: 640px) {
+      header { padding: 1rem 1.25rem; }
+      nav { gap: 1.25rem; }
+
+      .hero-content { padding: 0 1.25rem 3.5rem; }
+      .hero-headline { font-size: clamp(2.8rem, 12vw, 4.5rem); line-height: 1.0; }
+      .hero-meta { gap: 1.25rem; }
+
+      #projekte { padding: 4rem 1.25rem 3.5rem; }
+      .projekte-heading { font-size: clamp(1.8rem, 8vw, 2.5rem); margin-bottom: 2.5rem; }
+      .projekt {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+      }
+      .projekt-logo { width: 140px; height: 80px; }
+
+      #kontakt { padding: 4rem 1.25rem 3.5rem; }
+      .form-grid { grid-template-columns: 1fr; gap: 0; }
+      .full { grid-column: 1; }
+
       footer { padding: 1.5rem 1.25rem; }
-      .divider { margin: 0 1.25rem; }
-      nav { display: none; }
+      .footer-links { gap: 1.25rem; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-headline { font-size: 2.5rem; }
+      nav a { font-size: 0.58rem; letter-spacing: 0.15em; }
     }
   </style>
 </head>
@@ -346,11 +413,9 @@
 
   <!-- HEADER -->
   <header>
-    <a class="logo" href="#">
-      <!-- Logo: nach Upload ersetzen -->
-      <span class="logo-text">Allee Studios</span>
-    </a>
+    <a href="#" class="header-wordmark">Allee Studios</a>
     <nav>
+      <a href="#projekte">Projekte</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
@@ -358,83 +423,105 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-line"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-tag">Hamburg · Studio & Location</span>
-      <h1>Produktionen<br>für die <em>Freiheit.</em></h1>
-      <p class="hero-sub">Raum für Musik, Film, Kunst und lebendige Veranstaltungen – im Herzen der Allee.</p>
-      <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
+      <h1 class="hero-headline">
+        Produktionen<br>für die <em>Freiheit.</em>
+      </h1>
+      <div class="hero-meta">
+        <span class="hero-descriptor">Studio &amp; Location · Kollwitzkiez, Berlin</span>
+        <a class="btn" href="#kontakt">Anfragen</a>
+      </div>
     </div>
   </section>
 
-  <hr class="divider" />
+  <!-- HEIMAT VON -->
+  <section id="projekte">
+    <div class="inner">
+      <h2 class="projekte-heading">Heimat von</h2>
+
+      <div class="projekt-list">
+
+        <div class="projekt">
+          <img src="assets/Based. - 2.png" alt="based. Podcast" class="projekt-logo" />
+          <p class="projekt-text">
+            based. macht Journalismus mit Neugier und Respekt. Jede Woche sprechen wir mit Menschen, die Debatten durch ihre Meinungen prägen. based. zu sein bedeutet, zu seinen Ansichten zu stehen – auch gegen den Strom. Wir glauben, dass echtes Zuhören und Verstehen die Grundlage einer lebendigen Debattenkultur sind. based. wird jeden Montag aus unserem Studio in Berlin gesendet.
+          </p>
+        </div>
+
+        <div class="projekt">
+          <img src="assets/Hekaton-Logo-CMYK-300dpi.png" alt="Hekaton Berlin" class="projekt-logo" />
+          <p class="projekt-text">
+            Hekaton vergibt Fellowships, Grants und berät zivilgesellschaftliche Organisationen. Wir glauben, dass die offene Gesellschaft Menschen braucht, die sich zuständig machen – mit Unternehmergeist und Idealismus. Wir sind für Euch da, damit Ihr mit Euren Ideen die Welt verbessern könnt.
+          </p>
+        </div>
+
+        <div class="projekt">
+          <img src="assets/OA Logo.jpg" alt="Open Axis" class="projekt-logo" />
+          <p class="projekt-text">
+            Deutschlands liberales Impulszentrum. Wir geben aufgeschlossenen Persönlichkeiten einen digitalen Raum, um über Freiheit zu sprechen – meinungsstark, faktensicher und abwechslungsreich. Jede Woche eine neue hochdosierte Liberalismus-Spritze in Videoform.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- KONTAKT -->
   <section id="kontakt">
-    <span class="section-label">Kontakt</span>
-    <h2>Lass uns reden.</h2>
-    <p class="intro">Fragen zu Buchungen, Kooperationen oder einfach Hallo – wir freuen uns auf deine Nachricht.</p>
+    <span class="kontakt-tag">Kontakt</span>
+    <h2 class="kontakt-heading">Studio anfragen.</h2>
+    <p class="kontakt-meta">
+      Die Allee Studios können für die Produktion von Videos und Podcasts sowie die Durchführung kleiner Events gemietet werden. Unverbindliche Anfragen jederzeit gerne.
+    </p>
 
-    <div class="kontakt-grid">
-      <div class="kontakt-card">
-        <span class="card-label">E-Mail</span>
+    <div class="kontakt-list">
+      <div class="kontakt-item">
+        <span class="kontakt-item-label">E-Mail</span>
         <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
-        <p>Wir antworten innerhalb von 48 Stunden.</p>
-      </div>
-      <div class="kontakt-card">
-        <span class="card-label">Instagram</span>
-        <a href="https://instagram.com/alleestudios" target="_blank" rel="noopener">@alleestudios</a>
-        <p>Einblicke, Projekte & Termine.</p>
+        <span class="kontakt-item-note">Antwort in 48h</span>
       </div>
     </div>
 
-    <!-- Kontaktformular -->
-    <div class="kontakt-form">
-      <h3>Schreib uns direkt.</h3>
-      <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="kontakt" />
-        <p style="display:none"><label>Nicht ausfüllen: <input name="bot-field" /></label></p>
+    <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="kontakt" />
+      <p style="display:none"><label>Nicht ausfüllen: <input name="bot-field" /></label></p>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Dein Name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" placeholder="deine@email.de" required />
-          </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Dein Name" required />
         </div>
-
-        <div class="form-group">
-          <label for="betreff">Betreff</label>
+        <div class="field">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" placeholder="deine@email.de" required />
+        </div>
+        <div class="field full">
+          <label for="betreff">Anliegen</label>
           <select id="betreff" name="betreff">
-            <option value="">Bitte wählen …</option>
-            <option value="buchung">Raumbuchung / Location</option>
-            <option value="produktion">Produktion / Projekt</option>
+            <option value="">Worum geht's?</option>
+            <option value="video">Video / Podcast Produktion</option>
+            <option value="event">Event / Veranstaltung</option>
             <option value="kooperation">Kooperation</option>
             <option value="sonstiges">Sonstiges</option>
           </select>
         </div>
-
-        <div class="form-group">
+        <div class="field full">
           <label for="nachricht">Nachricht</label>
           <textarea id="nachricht" name="nachricht" placeholder="Was hast du vor?" required></textarea>
         </div>
+      </div>
 
-        <button type="submit" class="btn-send">Nachricht senden</button>
-      </form>
-    </div>
+      <button type="submit" class="btn-send">Absenden</button>
+    </form>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Allee Studios</p>
-    <div>
+    <span>© 2026 Allee Studios</span>
+    <div class="footer-links">
       <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
-      &nbsp;·&nbsp;
       <a href="#">Impressum</a>
-      &nbsp;·&nbsp;
       <a href="#">Datenschutz</a>
     </div>
   </footer>
