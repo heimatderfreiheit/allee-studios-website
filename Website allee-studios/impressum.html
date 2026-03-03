@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Allee Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #0e1f18;
+      --gold: #c9a84c;
+      --cream: #f0ede6;
+      --border: rgba(201,168,76,0.18);
+    }
+
+    body {
+      background: var(--green);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.55);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    main {
+      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 6rem;
+    }
+
+    .page-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      margin-bottom: 3rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p, address {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,237,230,0.75);
+      font-style: normal;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      color: rgba(240,237,230,0.3);
+    }
+
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.35);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      header { padding: 1.25rem; }
+      main { padding: 3rem 1.25rem 4rem; }
+      footer { padding: 1.5rem 1.25rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="/">Allee Studios</a>
+    <nav><a href="/">← Zurück</a></nav>
+  </header>
+
+  <main>
+    <p class="page-tag">Rechtliches</p>
+    <h1>Impressum</h1>
+
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <address>
+      Prometheus – Das Freiheitsinstitut gGmbH<br>
+      Mulackstraße 29<br>
+      10119 Berlin
+    </address>
+
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: <a href="tel:+4930239110730">+49 (0)30 23911073</a><br>
+      E-Mail: <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
+    </p>
+
+    <hr class="divider" />
+
+    <h2>Registereintrag</h2>
+    <p>
+      Eingetragen im Handelsregister.<br>
+      Registergericht: Amtsgericht Charlottenburg<br>
+      Registernummer: HRB 205188 B
+    </p>
+
+    <h2>Umsatzsteuer-ID</h2>
+    <p>
+      Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>
+      wird nachgereicht
+    </p>
+
+    <hr class="divider" />
+
+    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+    <address>
+      Prometheus – Das Freiheitsinstitut gGmbH<br>
+      Mulackstraße 29<br>
+      10119 Berlin
+    </address>
+
+    <hr class="divider" />
+
+    <h2>Haftungsausschluss</h2>
+    <p>
+      Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+    </p>
+  </main>
+
+  <footer>
+    <span>© 2026 Allee Studios</span>
+    <div class="footer-links">
+      <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz – Allee Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #0e1f18;
+      --gold: #c9a84c;
+      --cream: #f0ede6;
+      --border: rgba(201,168,76,0.18);
+    }
+
+    body {
+      background: var(--green);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    nav a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.55);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    main {
+      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 6rem;
+    }
+
+    .page-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      margin-bottom: 3rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,237,230,0.75);
+      margin-bottom: 0.75rem;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      color: rgba(240,237,230,0.3);
+    }
+
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.35);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      header { padding: 1.25rem; }
+      main { padding: 3rem 1.25rem 4rem; }
+      footer { padding: 1.5rem 1.25rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="/">Allee Studios</a>
+    <nav><a href="/">← Zurück</a></nav>
+  </header>
+
+  <main>
+    <p class="page-tag">Rechtliches</p>
+    <h1>Datenschutz&shy;erklärung</h1>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Verantwortlicher im Sinne der DSGVO ist:<br>
+      Prometheus – Das Freiheitsinstitut gGmbH, Mulackstraße 29, 10119 Berlin<br>
+      E-Mail: <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
+    </p>
+
+    <hr class="divider" />
+
+    <h2>2. Hosting</h2>
+    <p>
+      Diese Website wird über <strong>Netlify, Inc.</strong> (512 2nd Street, Suite 200, San Francisco, CA 94107, USA) gehostet. Bei jedem Aufruf der Website werden automatisch Verbindungsdaten (IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, Browsertyp) an Netlify übertragen. Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website).
+    </p>
+    <p>
+      Netlify hat sich dem EU-US Data Privacy Framework unterworfen. Weitere Informationen unter <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a>.
+    </p>
+
+    <hr class="divider" />
+
+    <h2>3. Kontaktformular</h2>
+    <p>
+      Wenn Sie uns über das Kontaktformular eine Nachricht senden, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung Ihrer Anfrage verarbeitet. Die Daten werden ebenfalls über Netlify Forms übermittelt und gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertragsverhältnisses) bzw. Art. 6 Abs. 1 lit. f DSGVO.
+    </p>
+    <p>
+      Wir geben Ihre Daten nicht ohne Ihre ausdrückliche Einwilligung an Dritte weiter. Die Daten werden gelöscht, sobald sie für den Zweck ihrer Erhebung nicht mehr erforderlich sind.
+    </p>
+
+    <hr class="divider" />
+
+    <h2>4. Google Fonts</h2>
+    <p>
+      Diese Website verwendet Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Beim Aufruf der Website wird eine Verbindung zu den Servern von Google hergestellt, wodurch Ihre IP-Adresse übermittelt werden kann. Die Einbindung erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO. Google hat sich dem EU-US Data Privacy Framework unterworfen.
+    </p>
+    <p>
+      Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+    </p>
+
+    <hr class="divider" />
+
+    <h2>5. Ihre Rechte</h2>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Darüber hinaus haben Sie das Recht, der Verarbeitung zu widersprechen (Art. 21 DSGVO).</p>
+    <p>
+      Zur Geltendmachung Ihrer Rechte wenden Sie sich an: <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
+    </p>
+    <p>
+      Sie haben zudem das Recht, sich bei einer Aufsichtsbehörde zu beschweren. Die zuständige Aufsichtsbehörde in Berlin ist die Berliner Beauftragte für Datenschutz und Informationsfreiheit (<a href="https://www.datenschutz-berlin.de" target="_blank" rel="noopener">datenschutz-berlin.de</a>).
+    </p>
+
+    <hr class="divider" />
+
+    <h2>6. Cookies</h2>
+    <p>
+      Diese Website verwendet keine Tracking-Cookies oder Analyse-Tools. Es werden lediglich technisch notwendige Verbindungen zu externen Diensten hergestellt (Netlify, Google Fonts).
+    </p>
+  </main>
+
+  <footer>
+    <span>© 2026 Allee Studios</span>
+    <div class="footer-links">
+      <a href="mailto:info@allee-studios.de">info@allee-studios.de</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+</body>
+</html>
