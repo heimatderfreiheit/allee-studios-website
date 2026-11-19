@@ -7,7 +7,7 @@ Landing Page für [allee-studios.de](https://allee-studios.de)
 ```
 /
 ├── index.html       ← Einzige Seite (Landing Page)
-├── netlify.toml     ← Netlify Konfiguration
+├── CNAME            ← Domain für GitHub Pages
 ├── .gitignore
 └── assets/
     └── logo.png     ← Logo hier ablegen
@@ -15,9 +15,8 @@ Landing Page für [allee-studios.de](https://allee-studios.de)
 
 ## Deployment
 
-Verbunden mit Netlify via GitHub. Jeder Push auf `main` löst automatisch ein neues Deployment aus.
+GitHub Pages aus dem Repo heimatderfreiheit/allee-studios-website. Jeder Push auf `main` veröffentlicht die Seite.
 
 ## Kontaktformular
 
-Das Formular nutzt **Netlify Forms** (kostenlos bis 100 Einsendungen/Monat).
-Einsendungen erscheinen unter: netlify.com → Site → Forms
+Das Formular öffnet das Mailprogramm des Besuchers mit einer vorausgefüllten Nachricht an info@allee-studios.de.

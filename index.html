@@ -483,9 +483,7 @@
       </div>
     </div>
 
-    <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="kontakt" />
-      <p style="display:none"><label>Nicht ausfüllen: <input name="bot-field" /></label></p>
+    <form name="kontakt" id="kontakt-form" onsubmit="sendKontakt(event)">
 
       <div class="form-grid">
         <div class="field">
@@ -526,5 +524,18 @@
     </div>
   </footer>
 
+<script>
+  function sendKontakt(e) {
+    e.preventDefault();
+    var f = document.getElementById('kontakt-form');
+    var v = function(n) { return (f.elements[n].value || '').trim(); };
+    var sel = f.elements['betreff'];
+    var anliegen = sel.value ? sel.options[sel.selectedIndex].text : 'Anfrage';
+    var body = ['Name: ' + v('name'), 'E-Mail: ' + v('email'), 'Anliegen: ' + anliegen, '', v('nachricht')].join('\n');
+    window.location.href = 'mailto:info' + '@' + 'allee-studios.de' +
+      '?subject=' + encodeURIComponent(anliegen + ' (' + v('name') + ')') +
+      '&body=' + encodeURIComponent(body);
+  }
+</script>
 </body>
 </html>
